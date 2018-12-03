@@ -8,13 +8,11 @@ namespace SSPOdenseMenu
 {
     public class Controller
     {
-        public void Anmeldelse()
+        public void Report()
         {
-            Console.Clear();
-            Console.WriteLine("Indtast anmeldelse også sker ingenting");
-            Console.ReadLine();
-            Console.WriteLine("stop med at skrive ting hvad fuck");
-    
+            UserReport n = new UserReport();
+
+            n.Connect();
         }
 
         public void Login()
