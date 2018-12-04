@@ -42,5 +42,12 @@ namespace SSPOdenseMenu
             Console.WriteLine("Haha hvis bare det virkede man");
             Console.ReadLine();
         }
+
+        public void TjekDBForIndhold()
+        {
+            TjekDB db = new TjekDB();
+
+            db.PullFromDB();
+        }
     }
 }
