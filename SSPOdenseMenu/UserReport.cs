@@ -22,23 +22,28 @@ namespace SSPOdenseMenu
                 {
                     con.Open();
 
-                    Console.WriteLine("Tryk enter for at indbrette en anmeldese:");
-                    Console.ReadLine();
 
                     SqlCommand cmd1 = new SqlCommand("InsertUserReport", con);
                     cmd1.CommandType = CommandType.StoredProcedure;
+                    Console.WriteLine("Indtast dit brugernavn - det du logger ind med eller ingenting");
                     string stringInputUserID = Console.ReadLine();
-                    int.TryParse(stringInputUserID, out int intInputUserID);
-                    cmd1.Parameters.Add(new SqlParameter("@UserID", intInputUserID));
-                    Console.WriteLine("indtast datetime");
+                    cmd1.Parameters.Add(new SqlParameter("@UserID", stringInputUserID));
+                    Console.Clear();
+                    Console.WriteLine("Indtast dato - indtast som dd/mm/yyyy");
                     string stringInputDateTime =  Console.ReadLine();
                     cmd1.Parameters.Add(new SqlParameter("@DateTime", stringInputDateTime));
-                    Console.WriteLine("Indtast lokation");
+                    Console.Clear();
+                    Console.WriteLine("Indtast lokation - kan f.eks. være en adresse eller et område");
                     string stringInputLocation = Console.ReadLine();
                     cmd1.Parameters.Add(new SqlParameter("@Location", stringInputLocation));
-                    Console.WriteLine("indtast anmeldelse");
+                    Console.Clear();
+                    Console.WriteLine("Anmeldelse - beskriv hændelsen");
                     string stringInputReportText = Console.ReadLine();
                     cmd1.Parameters.Add(new SqlParameter("@ReportText", stringInputReportText));
+                    Console.Clear();
+                    Console.WriteLine("Tak for din anmeldelse - vi tjekker op på den :)");
+                    Console.Write("Tryk enter for at afslutte");
+
 
                     cmd1.ExecuteNonQuery();
                 }
