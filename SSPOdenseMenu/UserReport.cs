@@ -15,8 +15,6 @@ namespace SSPOdenseMenu
 
         public void Connect()
         {
-            string stringInput = Console.ReadLine();
-            int.TryParse(stringInput, out int intInput);
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -24,20 +22,23 @@ namespace SSPOdenseMenu
                 {
                     con.Open();
 
+                    Console.WriteLine("Tryk enter for at indbrette en anmeldese:");
+                    Console.ReadLine();
+
                     SqlCommand cmd1 = new SqlCommand("InsertUserReport", con);
                     cmd1.CommandType = CommandType.StoredProcedure;
-                    cmd1.Parameters.Add(new SqlParameter("@UserID", intInput));
-                    Console.WriteLine("indtast userid");
-                    Console.ReadLine();
-                    cmd1.Parameters.Add(new SqlParameter("@DateTime", stringInput));
+                    string stringInputUserID = Console.ReadLine();
+                    int.TryParse(stringInputUserID, out int intInputUserID);
+                    cmd1.Parameters.Add(new SqlParameter("@UserID", intInputUserID));
                     Console.WriteLine("indtast datetime");
-                    Console.ReadLine();
-                    cmd1.Parameters.Add(new SqlParameter("@Location", stringInput));
-                    Console.WriteLine("indtast lokation");
-                    Console.ReadLine();
-                    cmd1.Parameters.Add(new SqlParameter("@ReportText", stringInput));
-                    Console.WriteLine("indtast reporttext");
-                    Console.ReadLine();
+                    string stringInputDateTime =  Console.ReadLine();
+                    cmd1.Parameters.Add(new SqlParameter("@DateTime", stringInputDateTime));
+                    Console.WriteLine("Indtast lokation");
+                    string stringInputLocation = Console.ReadLine();
+                    cmd1.Parameters.Add(new SqlParameter("@Location", stringInputLocation));
+                    Console.WriteLine("indtast anmeldelse");
+                    string stringInputReportText = Console.ReadLine();
+                    cmd1.Parameters.Add(new SqlParameter("@ReportText", stringInputReportText));
 
                     cmd1.ExecuteNonQuery();
                 }
