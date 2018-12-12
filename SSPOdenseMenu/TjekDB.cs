@@ -15,8 +15,6 @@ namespace SSPOdenseMenu
 
         public void PullFromDB()
         {
-            string stringInput = Console.ReadLine();
-            int.TryParse(stringInput, out int intInput);
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -26,7 +24,6 @@ namespace SSPOdenseMenu
 
                     SqlCommand cmd2 = new SqlCommand("GetStuff", con);
                     cmd2.CommandType = CommandType.StoredProcedure;
-                    cmd2.Parameters.Add(new SqlParameter("@UserID", intInput));
 
                     SqlDataReader reader = cmd2.ExecuteReader();
 
@@ -34,18 +31,16 @@ namespace SSPOdenseMenu
                     {
                         while (reader.Read())
                         {
-                            string id = reader["UserID"].ToString();
                             string datetime = reader["DateTime"].ToString();
                             string location = reader["Location"].ToString();
                             string reporttext = reader["ReportText"].ToString();
-                            string reportid = reader["ReportID"].ToString();
-                            Console.WriteLine($"{id} {datetime} {location} {reporttext} {reportid} gufgf");
+                            Console.WriteLine($"{datetime} {location} {reporttext}");
                         }
                     }
                 }
                 catch (SqlException e)
                 {
-                    Console.WriteLine("wtf: " + e.Message);
+                    Console.WriteLine("Fejl: " + e.Message);
                 }
             }
         }
