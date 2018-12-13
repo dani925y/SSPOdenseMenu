@@ -38,7 +38,7 @@ namespace SSPOdenseMenu
                         break;
                     case 4:
                         Console.Clear();
-                        control.TjekDBForIndhold();
+                        control.CheckDB();
                         Console.ReadLine();
                         break;
                     case 9:
@@ -58,7 +58,7 @@ namespace SSPOdenseMenu
             Console.WriteLine("1. Anmeldelse");
             Console.WriteLine("2. Login");
             Console.WriteLine("3. Opret bruger");
-            Console.WriteLine("4. Tjek db bromand");
+            Console.WriteLine("4. Hent anmeldelser");
             Console.WriteLine("0. Exit");
         }
 

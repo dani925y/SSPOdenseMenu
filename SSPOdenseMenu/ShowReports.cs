@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace SSPOdenseMenu
 {
-    public class TjekDB
+    public class ShowReports
     {
         private static string connectionString =
             "Server=EALSQL1.eal.local; Database= C_DB13_2018; User Id=C_STUDENT13; Password=C_OPENDB13;";
@@ -22,7 +22,7 @@ namespace SSPOdenseMenu
                 {
                     con.Open();
 
-                    SqlCommand cmd2 = new SqlCommand("GetStuff", con);
+                    SqlCommand cmd2 = new SqlCommand("GetAllReports", con);
                     cmd2.CommandType = CommandType.StoredProcedure;
 
                     SqlDataReader reader = cmd2.ExecuteReader();
@@ -31,10 +31,13 @@ namespace SSPOdenseMenu
                     {
                         while (reader.Read())
                         {
+                            string reportid = reader["ReportID"].ToString();
+                            string userid = reader["UserID"].ToString();
                             string datetime = reader["DateTime"].ToString();
                             string location = reader["Location"].ToString();
                             string reporttext = reader["ReportText"].ToString();
-                            Console.WriteLine($"{datetime} {location} {reporttext}");
+                            Console.WriteLine($"\nRapportID: {reportid} \nUserID: {userid}\nTidspunkt: {datetime} " +
+                                $"\nLokation: {location} \nAnmeldelses tekst: {reporttext}\n");
                         }
                     }
                 }

@@ -43,11 +43,11 @@ namespace SSPOdenseMenu
             Console.ReadLine();
         }
 
-        public void TjekDBForIndhold()
+        public void CheckDB()
         {
-            TjekDB db = new TjekDB();
+            ShowReports show = new ShowReports();
 
-            db.PullFromDB();
+            show.PullFromDB();
         }
     }
 }
