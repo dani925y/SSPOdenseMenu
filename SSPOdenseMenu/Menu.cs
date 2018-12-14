@@ -33,7 +33,7 @@ namespace SSPOdenseMenu
                         break;
                     case 3:
                         Console.Clear();
-                        control.OpretBruger();
+                        control.CreateUser();
                         Console.ReadLine();
                         break;
                     case 4:

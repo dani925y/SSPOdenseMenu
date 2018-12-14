@@ -27,20 +27,11 @@ namespace SSPOdenseMenu
             Console.WriteLine("Haha bare det virkede");
         }
 
-        public void OpretBruger()
+        public void CreateUser()
         {
-            Console.Clear();
-            Console.WriteLine("Indtast ønsket brugernavn: ");
-            Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("Indtast ønsket password: ");
-            Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("Indtast post nummeret for dit område");
-            Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("Haha hvis bare det virkede man");
-            Console.ReadLine();
+            InsertUser user = new InsertUser();
+
+            user.ConnectToUserDatabase();
         }
 
         public void CheckDB()
@@ -49,5 +40,6 @@ namespace SSPOdenseMenu
 
             show.PullFromDB();
         }
+
     }
 }
