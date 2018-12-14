@@ -14,7 +14,7 @@ namespace SSPOdenseMenu
             Console.Clear();
             Console.Write("Brugernavn: ");
             string username = Console.ReadLine();
-            Console.Write("Kodeord: ");
+            Console.Write("Password: ");
             string password = ReadPassword();
 
             return connection.CheckLoginInformation(username, password);
