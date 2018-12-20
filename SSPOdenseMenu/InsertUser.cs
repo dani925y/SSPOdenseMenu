@@ -50,7 +50,7 @@ namespace SSPOdenseMenu
                 }
                 catch (SqlException e)
                 {
-                    Console.WriteLine("wtf: " + e.Message);
+                    Console.WriteLine("Fejl: " + e.Message);
                 }
             }
         }

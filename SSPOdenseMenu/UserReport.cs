@@ -46,7 +46,7 @@ namespace SSPOdenseMenu
                     cmd1.Parameters.Add(new SqlParameter("@ReportText", stringInputReportText));
                     Console.Clear();
 
-                    Console.WriteLine("Tak for din anmeldelse - vi tjekker op på den :)");
+                    Console.WriteLine("Tak for dit tip - vi tjekker op på det :)");
                     Console.Write("Tryk enter for at afslutte");
 
 
@@ -54,7 +54,7 @@ namespace SSPOdenseMenu
                 }
                 catch(SqlException e)
                 {
-                    Console.WriteLine("wtf: " + e.Message);
+                    Console.WriteLine("Fejl: " + e.Message);
                 }
             }
         }

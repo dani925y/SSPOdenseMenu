@@ -37,7 +37,7 @@ namespace SSPOdenseMenu
                             string location = reader["Location"].ToString();
                             string reporttext = reader["ReportText"].ToString();
                             Console.WriteLine($"\nRapportID: {reportid} \nUserID: {userid}\nTidspunkt: {datetime} " +
-                                $"\nLokation: {location} \nAnmeldelses tekst: {reporttext}\n");
+                                $"\nLokation: {location} \nTip tekst: {reporttext}\n");
                         }
                     }
                 }

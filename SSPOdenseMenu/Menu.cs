@@ -28,7 +28,7 @@ namespace SSPOdenseMenu
                         break;
                     case 2:
                         Console.Clear();
-                        control.Login();
+                        control.UserLogin();
                         Console.ReadLine();
                         break;
                     case 3:
@@ -47,7 +47,7 @@ namespace SSPOdenseMenu
                         break;
                     default:
                         Console.Clear();
-                        Console.WriteLine("hvad fanden laver du?");
+                        Console.WriteLine("Fejl");
                         break;
                 }
             } while (active);
@@ -55,10 +55,10 @@ namespace SSPOdenseMenu
         public void ShowMenu()
         {
             Console.Clear();
-            Console.WriteLine("1. Anmeldelse");
+            Console.WriteLine("1. Tip");
             Console.WriteLine("2. Login");
             Console.WriteLine("3. Opret bruger");
-            Console.WriteLine("4. Hent anmeldelser");
+            Console.WriteLine("4. Hent tip");
             Console.WriteLine("0. Exit");
         }
 

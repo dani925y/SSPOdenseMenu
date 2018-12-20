@@ -15,16 +15,10 @@ namespace SSPOdenseMenu
             n.Connect();
         }
 
-        public void Login()
+        public void UserLogin()
         {
-            Console.Clear();
-            Console.WriteLine("Brugernavn: ");
-            Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("Password: ");
-            Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("Haha bare det virkede");
+            Login user = new Login();
+            user.CheckLogin();
         }
 
         public void CreateUser()
